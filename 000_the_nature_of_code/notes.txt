@@ -1,0 +1,186 @@
+- vectors
+  1. magnitude (length or size)
+  2. direction (can be represented by an angle)
+
+PVector postion; // class that handles vectors in processing
+
+PVector location;
+location = new PVector(100, 50);
+
+Vector Math
+  add(sub)
+  mult(div) "scale"
+  magnitud "mag"
+  normalize()
+
+  - add() // sub()
+  w = v + u
+  wx = vx + ux
+  wy = vy + uy
+  - subtracting 2 vector give us as result a vector that points one
+  to the other
+
+  - mult() "scale"
+
+  - mag()
+    gets the magnitude of the vector, its hypotenuse
+
+  - normalize()
+    transform the vector and gives it magnitude 1
+
+  - setMag(n)
+    nomalizes and escales at the same time
+
+  PVector.random2D();
+    generates a random vector
+  vector.limit(5);
+    limits the magnitude of a vector to the passed value
+
+- Gaussian distribution
+  - import the random library in java
+  import java.util.random;
+
+  Random generator:
+  generator = Random();
+  float h = (float) generator.nextGaussian();
+  // this will generate a random value where:
+  // mean = 0
+  // standard deviation = 1
+
+  - Custom distribution
+
+  - perlin noise
+
+- forces
+  a force is a vector that causes an object with mass accelerate
+
+  force = mass * accelaration
+  f = m * a
+  a = f / m
+
+  gravity = (G * m1 * m2) / r2
+
+  friction = -1 * mu * ||N|| * velocity(unit)
+    direction = -1 * velocity(unit)
+
+    velocity.get() // gets a copy of the magnitude of velocity
+
+    magnitude = mu * ||N||
+    N = 1 // to make things simple
+    mu = coefficient of friction
+
+    PVector friction = velocity.get();
+    friction.normalize();
+    friction.mult(-1);
+    float c = 0.01;
+    friction.mult(c);
+
+  drag force
+    Fd = (-1/2) * P* (v^2) * A * Cd * v(unit)
+    Fd = drag force
+    P  = (rho) density
+    v  = velocity
+    A  = surface area
+    Cd = coefficient of drag
+    // simplifying for 'to make things simple'
+    Fd =  -Cd * v^2 * v(unit)
+
+    PVector drag = velocity.get();
+    drag.normalize();
+    drag.mult(-1);
+    float speed = velocity.mag();
+    float c = 0.01;
+    drag.mult(c * speed * speed);
+
+  gravitational attraction
+    fg = ((G * m1 * m2) / d^2) * r(unit)
+    attactror: doesn't move
+    mover: object attracted by the attractor
+    r = vector that points from object one to object two
+    G = universal gravitational constant
+    d = distance between the objects
+
+    PVector = dir = Pvector.sub(loc2, loc1);
+    float d = dir.mag();
+    dir.normalize();
+    float G = 1;
+
+Trigonometry
+  The study of the relationship between the sides and the angles of a right triangle.
+
+  Radian
+  a radian is the angle of which the arc of the triangle is equal to the radius
+  of the circle
+  with a circle of radius 1, the circumference of that circle is 2PI
+
+  SOHCAHTOA
+
+  sin(theta) = opposite / hypotenuse
+  cos(theta) = adjacent / hypotenuse
+  tan(theta) = opposite / adjacent
+
+       #
+      ##
+   h # #
+    #  # opposite
+   #   #
+  ######
+  adjacent
+
+  cartesian coordinate: (x, y)
+  polar coordinate: (r, tetha)
+
+  x = r * cos(tetha)
+  y = r * sin(tetha)
+
+Simple Harmonic Motion
+
+  1   #       # #
+     # #     #   #
+  0 #   #   #     #
+         # #       #
+ -1       #         #
+
+  amplitude: the distance between the highest point of the wave and the middle point
+  period: the time to takes the sequence to repeat itself
+  frequency: 1/period
+
+  in processing
+  amplitude: width/2
+  period = 200 (number of frames it will take for the sequence to repeat itself)
+
+  (frame_count/period * 2*PI)
+
+Pendulum
+    origin (x, y)
+     #
+     #
+     # arm
+     #
+     #
+     0 bob (x, y)
+
+  fp: force of the pendulum
+  fg: gravitational force
+
+  sin(tetha) = fp/fg
+  fp = fg * sin(tetha)
+
+Spring
+  Hooke's law
+  F = -K * x
+  K = constant
+  x = displacement (current length - rest length)
+
+ArrayLists
+  add()
+  get()
+  remove()
+  size()
+
+  declaring an array list
+  ArrayList<Particle> a;
+  a = new ArrayListz<Particle>();
+
+  adding new elements
+  a.add(new Particle());

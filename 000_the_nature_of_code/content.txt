@@ -1,0 +1,20 @@
+I
+  1. vectors
+  2. forces
+  3. oscillation
+  4. particle systems
+    - arraylist
+    - inherence / polymorphism
+  5. Physics engines
+    - BOX2D
+    - Toxiclibs "verlet physics"
+  6. steering forces
+
+II - complexity
+  1. flocking
+  2. cellular automata
+  3. fractals
+
+II - intelligence
+  - evolution
+  - neural networks
